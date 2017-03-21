@@ -17,3 +17,21 @@
 ## Build & development
 
 Run `npm run build` for building.
+
+## Integration
+```javascript
+<script>
+    var myoptions = {name: 'foo'};
+
+    (function(d, s, id, url){
+      var js, ijs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)){ return; }
+      js = d.createElement(s); js.id = id;
+      js.onload = function(){
+          window.initIntercom(myoptions);
+      };
+      js.src = url + "main.js";
+      ijs.parentNode.insertBefore(js, ijs);
+    }(document, 'script', 'intercom','//andreibak.github.io/'));
+  </script>
+```
