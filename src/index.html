@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>intercom</title>
+</head>
+<body>
+  <script>
+    var myoptions = {name: 'foo'};
+
+    (function(d, s, id, url){
+      var js, ijs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)){ return; }
+      js = d.createElement(s); js.id = id;
+      js.onload = function(){
+          window.initIntercom(myoptions);
+      };
+      js.src = url + "main.js";
+      ijs.parentNode.insertBefore(js, ijs);
+    }(document, 'script', 'intercom',''));
+  </script>
+</body>
+</html>
